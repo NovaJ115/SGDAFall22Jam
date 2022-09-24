@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public float numHealth = 3;
     private float nextDash;
-    private float dashCooldown = 3f;
+    private float dashCooldown = 2f;
     public bool invincible = false;
     public Transform playerEric;
 
@@ -30,10 +30,10 @@ public class PlayerMovement : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire2") )//&& Time.time > nextDash)
+        if (Input.GetButtonDown("Fire2") && Time.time > nextDash)
         {
-            rb.AddForce(playerEric.up * moveSpeed, ForceMode2D.Impulse);
-            StartCoroutine(TurnInvincible());
+            //rb.AddForce(playerEric.up * 100, ForceMode2D.Impulse);
+            StartCoroutine(Dash());
             //rb.MovePosition(rb.position + movement * 100 * Time.fixedDeltaTime);
             nextDash = Time.time + dashCooldown;  
             
@@ -63,14 +63,15 @@ public class PlayerMovement : MonoBehaviour
         yield return null;
 
     }
-    public IEnumerator TurnInvincible()
+    public IEnumerator Dash()
     {
         
         invincible = true;
-        
+        moveSpeed = 20f;
         yield return new WaitForSeconds(0.1f);
         
         invincible = false;
+        moveSpeed = 5f;
         StopAllCoroutines();
         yield return null;
 

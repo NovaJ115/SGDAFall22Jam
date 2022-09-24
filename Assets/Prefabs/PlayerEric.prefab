@@ -124,8 +124,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1259405290687708601}
-  cam: {fileID: 0}
+  cam: {fileID: 759550361860163172, guid: 17b1b0c5e8d90f14f82b98b27c0e48d3, type: 3}
   numHealth: 3
+  invincible: 0
+  playerEric: {fileID: 0}
 --- !u!114 &1259405290687708596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1753813b55944480cf783da0c1d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEric: {fileID: 0}
+  playerEric: {fileID: 1259405290687708599}
   thrownCasingPrefab: {fileID: 1398586462564308540, guid: 7240bdfdbebf84347bcd563ba60e9f1a, type: 3}
   bulletForce: 20
 --- !u!61 &8338263125639351340
