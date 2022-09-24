@@ -8,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemy;
     public GameObject spawnArea;
 
+    public float spawnInterval;
+    public float bigSpawnInterval;
 
     // Start is called before the first frame update
     void Start()
@@ -22,4 +24,11 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log("Its working");
 
     }
+
+    public IEnumerator spawnEnemy(float interval, GameObject enemy)
+    {
+        yield return new WaitForSeconds(interval);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-5f, 5), Random.Range(-5f, 5), 0), Quaternion.identity);
+    }
+    
 }
