@@ -6,16 +6,16 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject enemy;
-    public GameObject player;
+    public Transform player;
 
     private int xPos;
     private int yPos;
     private int zPos = 0;
 
-    private int minX;
-    private int maxX;
-    private int minY;
-    private int maxY;
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
 
     //public float spawnInterval;
     //public float bigSpawnInterval;
@@ -25,27 +25,31 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         StartCoroutine(EnemySpawn());
     }
 
     IEnumerator EnemySpawn()
     {
-        minX = -20;
-        maxX = 20;
-        minY = -15;
-        maxY = 15;
+        
         while (enemiesSpawned > 0)
         {
-            xPos = Random.Range(minX, maxX);
-            yPos = Random.Range(minY, maxY);
+            minX = player.transform.position.x - 25f;
+            maxX = player.transform.position.x + 25;
+            minY = player.transform.position.y - 25;
+            maxY = player.transform.position.y + 25;
+            Debug.Log(player.transform.position.x);
 
-            if(xPos < 11 && xPos > 0)
+            xPos = (int)Random.Range(minX, maxX);
+            yPos = (int)Random.Range(minY, maxY);
+
+            if(xPos < 25 && xPos > 0)
             {
-                xPos = 15;
+                xPos = 25;
             }
-            else if(xPos >-11 && xPos < 0)
+            else if(xPos >-25 && xPos < 0)
             {
-                xPos = -15;
+                xPos = -25;
             }
             Instantiate(enemy, new Vector3(xPos, yPos, zPos), Quaternion.identity);
             
@@ -54,13 +58,4 @@ public class EnemySpawner : MonoBehaviour
 
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        Debug.Log("Its working");
-
-    }
-    
 }

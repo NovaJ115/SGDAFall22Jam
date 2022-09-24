@@ -10,17 +10,22 @@ public class EnemyAttack : MonoBehaviour
     private float nextFire;
     public Transform enemy;
     public GameObject bulletCasing;
-    public Rigidbody2D rb;
+    public Transform player;
+    private Rigidbody2D rb;
+    Vector3 distance;
+
     // Start is called before the first frame update
     void Start()
     {
         nextFire = Time.time;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.time > nextFire)
+        distance = transform.position - player.transform.position;
+        if(Time.time > nextFire && (distance.x < 15f && distance.x > -15f) && (distance.y < 10f && distance.y > -10f))
         {            
             Instantiate(bullet, transform.position, Quaternion.identity);
             GameObject casing = Instantiate(bulletCasing, enemy.position, enemy.rotation);
