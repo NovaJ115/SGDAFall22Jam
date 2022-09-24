@@ -6,13 +6,20 @@ public class PlayerThrownCasing : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 0.1f);
+        Destroy(gameObject, 3f);
         //StartCoroutine(DestroBullet());
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        if (!collision.gameObject.tag.Contains("Player"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag.Contains("Enemy"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
     /**
     public IEnumerator DestroyBullet()

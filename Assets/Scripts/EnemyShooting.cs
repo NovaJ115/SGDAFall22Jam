@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class EnemyShooting : MonoBehaviour
 {
+    PlayerMovement playerMovement;
     public float moveSpeed = 7f;
+    
 
+
+    
     Rigidbody2D rb;
 
     Transform target;
     Vector2 moveDirection;
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,6 +35,11 @@ public class EnemyShooting : MonoBehaviour
         if(col.gameObject.tag.Contains("Player"))
         {
             Destroy(gameObject);
+            playerMovement.numHealth--;
+            if (playerMovement.numHealth == 0)
+            {
+                Destroy(col.gameObject);
+            }
         }
     }
 }
