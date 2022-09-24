@@ -10,7 +10,7 @@ public class EnemyAttack : MonoBehaviour
     private float nextFire;
     public Transform enemy;
     public GameObject bulletCasing;
-    public Transform player;
+    private Transform player;
     private Rigidbody2D rb;
     Vector3 distance;
 

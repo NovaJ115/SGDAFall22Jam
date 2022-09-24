@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject enemy;
-    public Transform player;
+    private Transform player;
 
     private int xPos;
     private int yPos;
@@ -47,13 +47,13 @@ public class EnemySpawner : MonoBehaviour
             {
                 xPos = 25;
             }
-            else if(xPos >-25 && xPos < 0)
+            else if(xPos >-25 && xPos <= 0)
             {
                 xPos = -25;
             }
             Instantiate(enemy, new Vector3(xPos, yPos, zPos), Quaternion.identity);
             
-            yield return new WaitForSeconds(Random.Range(.1f, spawnSpeed));
+            yield return new WaitForSeconds(Random.Range(.5f, spawnSpeed));
 
 
         }
