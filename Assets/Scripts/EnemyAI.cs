@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public static event Action<EnemyAI> OnEnemyKilled;
 
     [SerializeField] float moveSpeed = 5f;
     Rigidbody2D rb;
