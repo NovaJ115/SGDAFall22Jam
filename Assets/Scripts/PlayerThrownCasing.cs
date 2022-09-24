@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class PlayerThrownCasing : MonoBehaviour
 {
-
-
     void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 0.1f);
         //StartCoroutine(DestroBullet());
     }
 
