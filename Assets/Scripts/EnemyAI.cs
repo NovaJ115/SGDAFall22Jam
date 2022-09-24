@@ -9,12 +9,15 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 5f;
     Rigidbody2D rb;
     Transform target;
+    SpriteRenderer spriteRenderer;
     Vector2 moveDirection;
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-    }
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    } 
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +36,13 @@ public class EnemyAI : MonoBehaviour
             moveDirection = direction;
         }
 
-        /**if (target.position.x > transform.position.x)
+        if (transform.position.x > target.position.x) {
+            spriteRenderer.flipX = true;
+        }
+        else
         {
-            SpriteRenderer.flipX;
-        }**/
+            spriteRenderer.flipX = false;
+        }
     }
     private void FixedUpdate()
     {
