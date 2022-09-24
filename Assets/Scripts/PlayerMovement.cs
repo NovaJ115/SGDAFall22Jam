@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
             //rb.AddForce(playerEric.up * 100, ForceMode2D.Impulse);
             StartCoroutine(Dash());
             //rb.MovePosition(rb.position + movement * 100 * Time.fixedDeltaTime);
-            nextDash = Time.time + dashCooldown;  
-            
+            nextDash = Time.time + dashCooldown;
+
         }
     }
 
@@ -52,24 +52,24 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator TurnInvincibleHit()
     {
-        
+
         invincible = true;
-       
+
         yield return new WaitForSeconds(0.5f);
-        
+
         invincible = false;
         StopAllCoroutines();
-        
+
         yield return null;
 
     }
     public IEnumerator Dash()
     {
-        
+
         invincible = true;
         moveSpeed = 20f;
         yield return new WaitForSeconds(0.1f);
-        
+
         invincible = false;
         moveSpeed = 5f;
         StopAllCoroutines();
