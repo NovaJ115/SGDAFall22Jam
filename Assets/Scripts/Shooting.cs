@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    ManageCasings manageCasings;
     public Transform playerEric;
     public GameObject thrownCasingPrefab;
+    
+
 
     public float bulletForce = 20f;
 
+    void Awake()
+    {
+        manageCasings = playerEric.GetComponent<ManageCasings>();
+    }
+
+    
     // Update is called once per frame
     void Update()
     {
@@ -16,12 +25,20 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
         }
+        
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(thrownCasingPrefab, playerEric.position, playerEric.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(playerEric.up * bulletForce, ForceMode2D.Impulse);
+        
+        if (manageCasings.numCasings >= 1) {
+            
+            GameObject bullet = Instantiate(thrownCasingPrefab, playerEric.position + playerEric.up * 0.8f, playerEric.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(playerEric.up * bulletForce, ForceMode2D.Impulse);
+            manageCasings.numCasings--;
+        }
     }
+
+    
 }

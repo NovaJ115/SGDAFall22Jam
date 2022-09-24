@@ -14,8 +14,10 @@ GameObject:
   - component: {fileID: 1259405290687708600}
   - component: {fileID: 1259405290687708596}
   - component: {fileID: 8338263125639351340}
+  - component: {fileID: 8797595292277270593}
+  - component: {fileID: -8175766433017469166}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerEric
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +125,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1259405290687708601}
-  cam: {fileID: 0}
+  cam: {fileID: 759550361860163172, guid: 17b1b0c5e8d90f14f82b98b27c0e48d3, type: 3}
+  numHealth: 3
+  invincible: 0
+  playerEric: {fileID: 0}
 --- !u!114 &1259405290687708596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1753813b55944480cf783da0c1d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEric: {fileID: 0}
+  playerEric: {fileID: 1259405290687708599}
   thrownCasingPrefab: {fileID: 1398586462564308540, guid: 7240bdfdbebf84347bcd563ba60e9f1a, type: 3}
   bulletForce: 20
 --- !u!61 &8338263125639351340
@@ -165,3 +170,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8797595292277270593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259405290687708603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b4d078512bd1b94c81081e3deeb16f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numCasings: 0
+--- !u!114 &-8175766433017469166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259405290687708603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a39e9145e768470499876543329d588b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 2234514791341406711, guid: f2ca028f9c8cfee48b95355a2d0d7f2f, type: 3}
+  player: {fileID: 1259405290687708603}
+  enemiesSpawned: 2
+  spawnSpeed: 2
