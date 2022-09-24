@@ -135,9 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8454338304568281378, guid: 3a7125668eb53e6418b017134f291f6a, type: 3}
-  fireRate: 2
   enemy: {fileID: 4145853707228161151}
-  bulletCasing: {fileID: 0}
+  bulletCasing: {fileID: 8889409268097925054, guid: 46cc02ec62c7cfd43b2f20e32605c711, type: 3}
   rb: {fileID: 0}
 --- !u!61 &-3147725104030431098
 BoxCollider2D:
