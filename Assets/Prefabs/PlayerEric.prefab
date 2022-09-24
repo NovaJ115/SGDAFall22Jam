@@ -125,6 +125,7 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1259405290687708601}
   cam: {fileID: 0}
+  numHealth: 3
 --- !u!114 &1259405290687708596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,3 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b4d078512bd1b94c81081e3deeb16f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numCasings: 0
