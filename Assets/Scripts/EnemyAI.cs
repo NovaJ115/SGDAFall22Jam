@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
 
-    [SerializeField] float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     Rigidbody2D rb;
     Transform target;
     Vector2 moveDirection;
@@ -19,7 +19,6 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 1);
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -30,15 +29,20 @@ public class EnemyAI : MonoBehaviour
         {
             Vector2 direction = (target.position - transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            rb.rotation = angle;
+            
             moveDirection = direction;
         }
+
+        /**if (target.position.x > transform.position.x)
+        {
+            SpriteRenderer.flipX;
+        }**/
     }
     private void FixedUpdate()
     {
         if(target)
         {
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            rb.velocity = new Vector3(moveDirection.x, moveDirection.y) * moveSpeed;
             
         }
     }

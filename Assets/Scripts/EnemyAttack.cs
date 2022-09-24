@@ -36,7 +36,8 @@ public class EnemyAttack : MonoBehaviour
             rb.velocity = Vector3.zero;
             
         }
-        rb.MoveRotation(rb.rotation + 50f * Time.fixedDeltaTime);
+
+        
     }
 
 
