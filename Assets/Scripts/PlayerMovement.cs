@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float numHealth = 3;
     private float nextDash;
     private float dashCooldown = 3f;
+    public bool invincible = false;
+    public Transform playerEric;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -22,15 +24,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //StartCoroutine(TurnInvincibleHit());
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetButtonDown("Fire1") )//&& Time.time > nextDash)
+        if (Input.GetButtonDown("Fire2") )//&& Time.time > nextDash)
         {
-            rb.MovePosition(rb.position + movement * 100 * Time.fixedDeltaTime);
-                nextDash = Time.time + dashCooldown;           
+            rb.AddForce(playerEric.up * moveSpeed, ForceMode2D.Impulse);
+            StartCoroutine(TurnInvincible());
+            //rb.MovePosition(rb.position + movement * 100 * Time.fixedDeltaTime);
+            nextDash = Time.time + dashCooldown;  
+            
         }
     }
 
@@ -44,5 +50,35 @@ public class PlayerMovement : MonoBehaviour
         rb.rotation = angle;
     }
 
-    
+    public IEnumerator TurnInvincibleHit()
+    {
+        
+        invincible = true;
+       
+        yield return new WaitForSeconds(0.5f);
+        
+        invincible = false;
+        StopAllCoroutines();
+        
+        yield return null;
+
+    }
+    public IEnumerator TurnInvincible()
+    {
+        
+        invincible = true;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        invincible = false;
+        StopAllCoroutines();
+        yield return null;
+
+    }
+
+    public void turnInvincible2()
+    {
+        StartCoroutine(TurnInvincibleHit());
+    }
+
 }

@@ -32,14 +32,20 @@ public class EnemyShooting : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag.Contains("Player"))
+        if(col.gameObject.tag.Contains("Player") && !playerMovement.invincible)
         {
-            Destroy(gameObject);
+            
             playerMovement.numHealth--;
+            playerMovement.turnInvincible2();
+            Destroy(gameObject);
             if (playerMovement.numHealth == 0)
             {
                 Destroy(col.gameObject);
             }
         }
     }
+
+    
+
+
 }
