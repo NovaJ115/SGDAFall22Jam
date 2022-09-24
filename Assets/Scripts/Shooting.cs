@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public Transform player;
+    public Transform playerEric;
     public GameObject thrownCasingPrefab;
 
     public float bulletForce = 20f;
@@ -20,8 +20,8 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(thrownCasingPrefab, player.position, player.rotation);
+        GameObject bullet = Instantiate(thrownCasingPrefab, playerEric.position, playerEric.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(player.up * bulletForce, ForceMode2D.Impulse);
+        rb.AddForce(playerEric.up * bulletForce, ForceMode2D.Impulse);
     }
 }

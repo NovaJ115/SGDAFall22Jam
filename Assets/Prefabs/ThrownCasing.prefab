@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 4164923696246659131}
   - component: {fileID: 399602143880177065}
   - component: {fileID: 190675691210836136}
-  - component: {fileID: -8181996637689059970}
-  - component: {fileID: -2941495164180982284}
+  - component: {fileID: -4076275877856385813}
   m_Layer: 0
   m_Name: ThrownCasing
   m_TagString: Untagged
@@ -135,7 +134,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-8181996637689059970
+--- !u!114 &-4076275877856385813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,21 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1398586462564308540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a1753813b55944480cf783da0c1d93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  thrownCasingPrefab: {fileID: 0}
-  bulletForce: 20
---- !u!114 &-2941495164180982284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398586462564308540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad1e1bc9583e0d24e9e1ee2f7f4cf69f, type: 3}
+  m_Script: {fileID: 11500000, guid: d60f2d3abeb95e044b16212f46089c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

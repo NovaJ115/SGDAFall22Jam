@@ -175,7 +175,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
+  orthographic: 1
   orthographic size: 5
   m_Depth: 0
   m_CullingMask:
@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 1690277896}
   - component: {fileID: 1690277895}
   - component: {fileID: 1690277894}
+  - component: {fileID: 1690277898}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -329,3 +330,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1690277898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690277893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91a1753813b55944480cf783da0c1d93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1690277897}
+  thrownCasingPrefab: {fileID: 1398586462564308540, guid: 7240bdfdbebf84347bcd563ba60e9f1a, type: 3}
+  bulletForce: 20
