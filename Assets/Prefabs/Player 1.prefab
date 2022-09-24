@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5735290940199018914}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1753813b55944480cf783da0c1d93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5735290940199018913}
+  playerEric: {fileID: 0}
   thrownCasingPrefab: {fileID: 1398586462564308540, guid: 7240bdfdbebf84347bcd563ba60e9f1a, type: 3}
   bulletForce: 20
