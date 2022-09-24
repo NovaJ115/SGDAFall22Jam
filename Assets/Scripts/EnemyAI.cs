@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
-    public static event Action<EnemyAI> OnEnemyKilled;
 
     [SerializeField] float moveSpeed = 5f;
     Rigidbody2D rb;
@@ -20,7 +19,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
