@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour
             shoot.Play();
             GameObject casing = Instantiate(bulletCasing, enemy.position, enemy.rotation);
             rb = casing.GetComponent<Rigidbody2D>();
-            rb.AddForce(enemy.up * Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);
+            rb.AddForce(enemy.up * Random.Range(-1.5f, 1.5f), ForceMode2D.Impulse);
             fireRate = Random.Range(2.7f, 3.3f);
             nextFire = Time.time + fireRate;
         }
