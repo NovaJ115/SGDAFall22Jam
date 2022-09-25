@@ -38,7 +38,6 @@ public class EnemySpawner : MonoBehaviour
             maxX = player.transform.position.x + 25;
             minY = player.transform.position.y - 25;
             maxY = player.transform.position.y + 25;
-            Debug.Log(player.transform.position.x);
 
             xPos = (int)Random.Range(minX, maxX);
             yPos = (int)Random.Range(minY, maxY);

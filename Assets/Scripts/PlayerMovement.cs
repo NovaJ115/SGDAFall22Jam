@@ -82,4 +82,8 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(TurnInvincibleHit());
     }
 
+    public float getHealth()
+    {
+        return numHealth;
+    }
 }

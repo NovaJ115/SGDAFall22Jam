@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyShooting : MonoBehaviour
 {
     PlayerMovement playerMovement;
     public float moveSpeed = 7f;
-    
 
-
-    
     Rigidbody2D rb;
 
     Transform target;
@@ -37,15 +35,8 @@ public class EnemyShooting : MonoBehaviour
             
             playerMovement.numHealth--;
             playerMovement.turnInvincible2();
+
             Destroy(gameObject);
-            if (playerMovement.numHealth == 0)
-            {
-                Destroy(col.gameObject);
-            }
         }
     }
-
-    
-
-
 }

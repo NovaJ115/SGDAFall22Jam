@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8338263125639351340}
   - component: {fileID: 8797595292277270593}
   - component: {fileID: -8175766433017469166}
+  - component: {fileID: 8598439820986659289}
   m_Layer: 0
   m_Name: PlayerEric
   m_TagString: Player
@@ -196,6 +197,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 2234514791341406711, guid: f2ca028f9c8cfee48b95355a2d0d7f2f, type: 3}
-  player: {fileID: 1259405290687708603}
   enemiesSpawned: 2
   spawnSpeed: 2
+--- !u!114 &8598439820986659289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259405290687708603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d1edb0e6129b24da292212a9bffa69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
