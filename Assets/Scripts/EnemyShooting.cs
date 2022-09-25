@@ -10,6 +10,7 @@ public class EnemyShooting : MonoBehaviour
 
     Rigidbody2D rb;
     public GameObject hurt;
+    public GameObject PlayDeath;
     Transform target;
     Vector2 moveDirection;
 
@@ -37,6 +38,10 @@ public class EnemyShooting : MonoBehaviour
 
             Instantiate(hurt);
             Destroy(gameObject);
+            if(playerMovement.numHealth == 0)
+            {
+                Instantiate(PlayDeath);
+            }
         }
     }
 }

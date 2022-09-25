@@ -138,3 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 15
   hurt: {fileID: 1404623096932453314, guid: 44868d91e2f304d4fbcf9a5fbafac127, type: 3}
+  PlayDeath: {fileID: 4701393694029048332, guid: 59efd5a63c6cab64f905a6fbe99072c0, type: 3}

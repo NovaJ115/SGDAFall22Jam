@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float nextDash;
     private float dashCooldown = 0.3f;
     public bool invincible = false;
+    public AudioSource roll;
     
     
     Vector2 movement;
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public IEnumerator Dash()
     {
-
+        roll.Play();
         invincible = true;
         moveSpeed = 20f;
         yield return new WaitForSeconds(0.1f);

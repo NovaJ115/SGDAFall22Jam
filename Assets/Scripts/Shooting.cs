@@ -7,6 +7,7 @@ public class Shooting : MonoBehaviour
     ManageCasings manageCasings;
     public Transform playerEric;
     public GameObject thrownCasingPrefab;
+    public AudioSource shoot;
 
 
 
@@ -33,7 +34,7 @@ public class Shooting : MonoBehaviour
 
         if (manageCasings.numCasings >= 1)
         {
-
+            shoot.Play();
             GameObject bullet = Instantiate(thrownCasingPrefab, playerEric.position + playerEric.up * 0.8f, playerEric.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(playerEric.up * bulletForce, ForceMode2D.Impulse);
