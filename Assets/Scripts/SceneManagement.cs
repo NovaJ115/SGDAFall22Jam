@@ -24,4 +24,9 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene("Final Scene");
     }
 
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
 }
