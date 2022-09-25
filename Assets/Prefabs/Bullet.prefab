@@ -137,3 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
+  hurt: {fileID: 1404623096932453314, guid: 44868d91e2f304d4fbcf9a5fbafac127, type: 3}

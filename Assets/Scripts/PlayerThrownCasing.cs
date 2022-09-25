@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerThrownCasing : MonoBehaviour
 {
+    public GameObject SoundPlayer;
     void Start()
     {
+        
         Destroy(gameObject, 3f);
         //StartCoroutine(DestroBullet());
     }
@@ -14,10 +16,12 @@ public class PlayerThrownCasing : MonoBehaviour
     {
         if (!collision.gameObject.tag.Contains("Player"))
         {
+            
             Destroy(gameObject);
         }
         if (collision.gameObject.tag.Contains("Enemy"))
         {
+            Instantiate(SoundPlayer);
             Destroy(collision.gameObject);
         }
     }

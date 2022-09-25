@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManageCasings : MonoBehaviour
 {
     public float numCasings = 0f;
+    public AudioSource pickup;
 
     
 
@@ -12,6 +13,7 @@ public class ManageCasings : MonoBehaviour
     {
         if (collision.gameObject.tag.Contains("Casing") && numCasings < 2)
         {
+            pickup.Play();
             Destroy(collision.gameObject);
             numCasings++;
         }
