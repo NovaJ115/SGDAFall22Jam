@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heart3;
     public GameObject player;
     public GameObject PlayDeath;
+    public GameObject deathScreen;
 
 
     // Start is called before the first frame update
@@ -33,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (playerMovement.numHealth == 0)
         {
-
+            deathScreen.SetActive(true);
             Instantiate(PlayDeath);
             Destroy(heart1);
             Destroy(player);
