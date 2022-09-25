@@ -137,6 +137,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  heart1: {fileID: 1037700314810169108, guid: 02afa3b7d1061cf419607e01d248685b, type: 3}
-  heart2: {fileID: 8455994158957337892, guid: 42bb841b0a2062e4f9b8d1e04b0e0a71, type: 3}
-  heart3: {fileID: 7872382978724448122, guid: 7b2b1d097a5c9ef4fb84fab86835834c, type: 3}
+  hurt: {fileID: 1404623096932453314, guid: 44868d91e2f304d4fbcf9a5fbafac127, type: 3}

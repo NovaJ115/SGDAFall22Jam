@@ -12,6 +12,7 @@ public class EnemyAttack : MonoBehaviour
     public GameObject bulletCasing;
     private Transform player;
     private Rigidbody2D rb;
+    public AudioSource shoot;
     Vector3 distance;
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class EnemyAttack : MonoBehaviour
         if(Time.time > nextFire && (distance.x < 15f && distance.x > -15f) && (distance.y < 10f && distance.y > -10f))
         {            
             Instantiate(bullet, transform.position, Quaternion.identity);
+            shoot.Play();
             GameObject casing = Instantiate(bulletCasing, enemy.position, enemy.rotation);
             rb = casing.GetComponent<Rigidbody2D>();
             rb.AddForce(enemy.up * Random.Range(-1.0f, 1.0f), ForceMode2D.Impulse);

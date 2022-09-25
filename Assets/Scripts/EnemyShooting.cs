@@ -9,7 +9,7 @@ public class EnemyShooting : MonoBehaviour
     public float moveSpeed = 7f;
 
     Rigidbody2D rb;
-
+    public GameObject hurt;
     Transform target;
     Vector2 moveDirection;
 
@@ -32,10 +32,10 @@ public class EnemyShooting : MonoBehaviour
     {
         if(col.gameObject.tag.Contains("Player") && !playerMovement.invincible)
         {
-            
             playerMovement.numHealth--;
             playerMovement.turnInvincible2();
 
+            Instantiate(hurt);
             Destroy(gameObject);
         }
     }
