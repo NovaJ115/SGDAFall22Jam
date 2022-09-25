@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldown = 2f;
     public bool invincible = false;
     public Transform playerEric;
+    public AudioSource dash;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -69,8 +70,9 @@ public class PlayerMovement : MonoBehaviour
         invincible = true;
         moveSpeed = 20f;
         yield return new WaitForSeconds(0.1f);
+        dash.Play();
 
-        invincible = false;
+    invincible = false;
         moveSpeed = 5f;
         StopAllCoroutines();
         yield return null;

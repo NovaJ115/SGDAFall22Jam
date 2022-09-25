@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject heart2;
     public GameObject heart3;
     public GameObject player;
+    public GameObject PlayDeath;
 
 
     // Start is called before the first frame update
@@ -29,10 +30,11 @@ public class PlayerHealth : MonoBehaviour
         if (playerMovement.numHealth == 1)
         {
             Destroy(heart2);
-
         }
         if (playerMovement.numHealth == 0)
         {
+
+            Instantiate(PlayDeath);
             Destroy(heart1);
             Destroy(player);
         }
