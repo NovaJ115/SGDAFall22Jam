@@ -10,14 +10,17 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public float numHealth = 3;
     private float nextDash;
-    private float dashCooldown = 2f;
+    private float dashCooldown = 0.3f;
     public bool invincible = false;
-    public Transform playerEric;
-    public AudioSource dash;
-
+    
+    
     Vector2 movement;
     Vector2 mousePos;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         nextDash = Time.time;
@@ -70,9 +73,8 @@ public class PlayerMovement : MonoBehaviour
         invincible = true;
         moveSpeed = 20f;
         yield return new WaitForSeconds(0.1f);
-        dash.Play();
 
-    invincible = false;
+        invincible = false;
         moveSpeed = 5f;
         StopAllCoroutines();
         yield return null;
@@ -84,8 +86,4 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(TurnInvincibleHit());
     }
 
-    public float getHealth()
-    {
-        return numHealth;
-    }
 }

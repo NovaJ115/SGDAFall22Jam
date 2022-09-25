@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2506671094841263375
+--- !u!1 &2391411402088852558
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7265491388871302035}
-  - component: {fileID: 7031736748208809681}
+  - component: {fileID: 4059692060224274747}
+  - component: {fileID: 3867074372988563456}
   m_Layer: 0
-  m_Name: atari_fire_2
+  m_Name: EnemyShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7265491388871302035
+--- !u!4 &4059692060224274747
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2506671094841263375}
+  m_GameObject: {fileID: 2391411402088852558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,19 +32,19 @@ Transform:
   m_Father: {fileID: 43769530117312078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &7031736748208809681
+--- !u!82 &3867074372988563456
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2506671094841263375}
+  m_GameObject: {fileID: 2391411402088852558}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8c15dde80cbbf2b4199f06d37ad4d2da, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -162,7 +162,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 7265491388871302035}
+  - {fileID: 4059692060224274747}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -200,7 +200,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.25, y: 0.7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -211,7 +211,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 4.7}
   m_EdgeRadius: 0
 --- !u!114 &4751935048296916154
 MonoBehaviour:
@@ -241,7 +241,7 @@ MonoBehaviour:
   bullet: {fileID: 8454338304568281378, guid: 3a7125668eb53e6418b017134f291f6a, type: 3}
   enemy: {fileID: 43769530117312078}
   bulletCasing: {fileID: 8889409268097925054, guid: 46cc02ec62c7cfd43b2f20e32605c711, type: 3}
-  shoot: {fileID: 7031736748208809681}
+  shoot: {fileID: 3867074372988563456}
 --- !u!212 &-6170543376034605090
 SpriteRenderer:
   m_ObjectHideFlags: 0
